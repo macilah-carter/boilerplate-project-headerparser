@@ -26,7 +26,7 @@ app.get('/api/hello', function (req, res) {
 
 app.get("/api/whoami", (req, res) => {
   const ip = req.headers['x-forwarded-for'] || req.ip
-  const language = req.headers['accept-language'].split(',')[0];
+  const language = req.headers['accept-language'];
   const software = req.headers['user-agent'];
 
   return res.json({ ip: ip, language: language, software: software })
